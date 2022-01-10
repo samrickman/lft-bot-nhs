@@ -35,7 +35,7 @@ The program will open automatically after being installed.
 1. The program will be added to the Start Menu automatically be the installation.
 2. Enter username and password and run the program.
 
-![](img/start-menu.png){:height="50%" width="50%"}
+![](img/start-menu.png?s=200)
 
 
 ![](img/main-window.png){:height="50%" width="50%"}
