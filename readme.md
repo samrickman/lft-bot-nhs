@@ -41,8 +41,8 @@ The program will open automatically after being installed.
 
 ### Legal disclaimer
 
-There is nothing in this code which infringes the gov.uk (terms and conditions)[https://www.gov.uk/help/terms-conditions]. It is not a denial-of-service attack: it makes, at most, one request every five minutes. 
+There is nothing in this code which infringes the gov.uk [terms and conditions](https://www.gov.uk/help/terms-conditions). This is not a denial-of-service attack: it makes, at most, one request every five minutes. 
 
 This code does not introduce, or attempt to introduce, viruses, trojans, worms, logic bombs or any other material that’s malicious or technologically harmful. It does not attempt gain unauthorised access to GOV.UK, the server on which it’s stored or any server, computer or database connected to it.
 
-The NHS prevents Covid tests being ordered more than once every 24 hours.
+The NHS prevents covid tests being ordered more than once every 24 hours and this program does not circumvent, or attempt to circumvent, this limit.
