@@ -16,7 +16,14 @@ You must:
 
 ### Installation 
 
-TODO: - fill this in
+TODO: upload release and make release into a link.
+
+Download the release.
+
+![Run `setup.exe`](img/install-folder.png)
+
+
+
 
 ### Running after install
 
