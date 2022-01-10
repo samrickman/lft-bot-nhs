@@ -1,0 +1,23 @@
+﻿<Window x:Class="NHSTestBot.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NHSTestBot"
+        mc:Ignorable="d"
+        Title="NHS LFT Ordering Bot" Height="450" Width="800">
+    <Grid Margin="0,1,111.6,-1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="44*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="623*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="NHS-registered email address:" HorizontalAlignment="Left" Margin="8,9,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+        <Label Content="NHS-registered password:" HorizontalAlignment="Left" Margin="8,29,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="email" HorizontalAlignment="Left" Height="23" Margin="128.6,13,0,0" TextWrapping="Wrap" Text="samrickman@gmail.com" VerticalAlignment="Top" Width="197" Grid.Column="2"/>
+        <PasswordBox x:Name ="passwordTextBox" HorizontalAlignment="Left" Margin="128.6,37,0,0" VerticalAlignment="Top" Width="197" Grid.Column="2"/>
+        <Button x:Name="orderButton" Content="Order tests!" HorizontalAlignment="Left" Height="44" Margin="343.6,11,0,0" VerticalAlignment="Top" Width="106" Click="orderButton_Click" Grid.Column="2"/>
+        <TextBlock x:Name="statusText" HorizontalAlignment="Left" Height="259" Margin="15,70,0,0" TextWrapping="Wrap" Text="{Binding Path=StatusText}" VerticalAlignment="Top" Width="608" Grid.ColumnSpan="3"/>
+
+    </Grid>
+</Window>
