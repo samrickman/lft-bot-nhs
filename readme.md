@@ -18,16 +18,26 @@ You must:
 
 TODO: upload release and make release into a link.
 
-Download the release.
+1. Download the release.
+2. Run `setup.exe`.
+3. Click `Install`.
 
-![Run `setup.exe`](img/install-folder.png)
+![Run setup](img/install-folder.png)
 
 
+![Click Install](img/install-folder.png)
 
+The program will open automatically after being installed.
 
 ### Running after install
 
-TODO: - fill this in
+1. The program will be added to the Start Menu automatically be the installation.
+2. Enter username and password and run the program.
+
+![](img/start-menu.png)
+
+
+![](img/main-window.png)
 
 ### Legal disclaimer
 
