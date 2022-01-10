@@ -23,9 +23,9 @@ TODO: upload release and make release into a link.
 2. Run `setup.exe`.
 3. Click `Install`.
 
-<img src="img/install-folder.png" style="width: 50%; height: 50%"/>
+<img src="img/install-folder.png" style="width: 75%; height: 75%"/>
 
-![Click Install](img/install.png?s=20)
+<img src="img/install.png" style="width: 75%; height: 75%"/>
 
 The program will open automatically after being installed.
 
@@ -34,10 +34,9 @@ The program will open automatically after being installed.
 1. The program will be added to the Start Menu automatically be the installation.
 2. Enter username and password and run the program.
 
-![](img/start-menu.png?s=200)
+<img src="img/start-menu.png" style="width: 75%; height: 75%"/>
 
-
-![](img/main-window.png?s=100)
+<img src="img/main-window.png" style="width: 75%; height: 75%"/>
 
 ### Legal disclaimer
 
