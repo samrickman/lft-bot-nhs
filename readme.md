@@ -1,10 +1,10 @@
-# NHS Lateral Flow Checker Jan 2022
+# Automated NHS Lateral Flow Test Software
 
-This is a simple piece of software which orders Lateral Flow Tests from the NHS Website.
+This is a simple piece of software which orders Lateral Flow Tests from the GOV.UK Website.
 
-It requires you to enter your NHS-registered username and password. It then opens a browser and completes the web form for you. If tests are unavailable, it waits five minutes and retries.
+It requires you to enter your NHS-registered username and password. It then opens a browser and completes the web form for you. If tests are unavailable, it waits five minutes and retries, until tests are available.
 
-It runs on your local machine and does not send your email address or password anywhere, other than entering it into the NHS website. You can confirm this by checking the source (`MainWindow.cs`).
+It runs on your local machine and does not send your email address or password anywhere, other than into the NHS website. You can confirm this by checking the source (`MainWindow.cs`).
 
 ### Requirements
 
@@ -40,8 +40,8 @@ The program will open automatically after being installed.
 
 ### Legal disclaimer
 
-There is nothing in this code which infringes the gov.uk [terms and conditions](https://www.gov.uk/help/terms-conditions). This is not a denial-of-service attack: it makes, at most, one request every five minutes. 
+There is nothing in this code which infringes the GOV.UK [terms and conditions](https://www.gov.uk/help/terms-conditions). This is not a denial-of-service attack: it makes, at most, one request every five minutes. 
 
 This code does not introduce, or attempt to introduce, viruses, trojans, worms, logic bombs or any other material that’s malicious or technologically harmful. It does not attempt gain unauthorised access to GOV.UK, the server on which it’s stored or any server, computer or database connected to it.
 
-The NHS prevents covid tests being ordered more than once every 24 hours and this program does not circumvent, or attempt to circumvent, this limit.
+The NHS prevents Covid-19 tests being ordered more than once every 24 hours and this program does not circumvent, or attempt to circumvent, this limit.
