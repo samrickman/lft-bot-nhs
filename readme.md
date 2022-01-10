@@ -38,7 +38,7 @@ The program will open automatically after being installed.
 ![](img/start-menu.png?s=200)
 
 
-![](img/main-window.png){:height="50%" width="50%"}
+![](img/main-window.png?s=100)
 
 ### Legal disclaimer
 
