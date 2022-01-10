@@ -50,7 +50,6 @@ namespace NHSTestBot
             int elementLoadTime = 3; // Max seconds for element to load 
             string url = "https://test-for-coronavirus.service.gov.uk/order-lateral-flow-kits/";
             string serviceDownUrl = "https://test-for-coronavirus.service.gov.uk/order-lateral-flow-kits/service-unavailable";
-            //string password = passwordTextBox.Text;
             string password = passwordTextBox.Password;
             try
             {
@@ -162,17 +161,15 @@ namespace NHSTestBot
                 if (driver.Url == serviceDownUrl)
                 {
                     driver.Quit();
-                    Console.WriteLine("false");
                     return false;
                 }
 
                 // See if we get last 24 hours message
-//                var ps = driver.FindElements(By.XPath("//p"));
+
                 if (driver.Url.Contains("problem"))
                 {
 
                     driver.Quit();
-                    Console.WriteLine("wait24");
                     return false;
                     
                 }
@@ -199,7 +196,6 @@ namespace NHSTestBot
                     }
                 }
 
-                Console.WriteLine("true");
                 driver.Quit();
                 return true;
 
@@ -211,7 +207,8 @@ namespace NHSTestBot
                     "Cannot connect"
                 );
 
-                driver.Quit();
+                Close();
+
                 return false;
             }
 
@@ -237,7 +234,7 @@ namespace NHSTestBot
 
         private bool orderTests()
         {
-            const int numCharsStartMessage = 50; // Keep the start messsage when flush the status box
+            const int numCharsStartMessage = 50; // To keep the start messsage when flushing the status box
 
             const int maxLines = 15;
             int numLines;
@@ -267,6 +264,7 @@ namespace NHSTestBot
 
 
             }
+            Console.WriteLine("getTests:" + getTests);
             return getTests;
         }
         private async void orderButton_Click(object sender, RoutedEventArgs e)
@@ -276,7 +274,7 @@ namespace NHSTestBot
                 MessageBox.Show("Please enter your password", "Error");
                 return;
             }  
-            int sleepTime = 60; // change to 60 seconds
+            int sleepTime = 60 * 5; // time between each attempt - 5 mins
             
             bool testsOrdered = false;
             while(!testsOrdered)
