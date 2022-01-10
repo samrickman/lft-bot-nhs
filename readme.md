@@ -23,10 +23,10 @@ TODO: upload release and make release into a link.
 2. Run `setup.exe`.
 3. Click `Install`.
 
-![Run setup](img/install-folder.png){:height="50%" width="50%"}
+![Run setup](img/install-folder.png?s=10px)
 
 
-![Click Install](img/install.png){:height="50%" width="50%"}
+![Click Install](img/install.png?s=20)
 
 The program will open automatically after being installed.
 
