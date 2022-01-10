@@ -1,4 +1,4 @@
-# Automated NHS Lateral Flow Test Software
+# Automated NHS Lateral Flow Test Ordering
 
 This is a simple piece of software which orders Lateral Flow Tests from the GOV.UK Website.
 
@@ -38,7 +38,7 @@ The program will open automatically after being installed.
 
 <img src="img/main-window.png" style="width: 75%; height: 75%"/>
 
-### Legal disclaimer
+### Legal information
 
 There is nothing in this code which infringes the GOV.UK [terms and conditions](https://www.gov.uk/help/terms-conditions). This is not a denial-of-service attack: it makes, at most, one request every five minutes. 
 
