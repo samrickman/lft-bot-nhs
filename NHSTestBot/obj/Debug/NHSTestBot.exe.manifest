@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NHSTestBot.exe" size="17864">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NHSTestBot.exe" size="20424">
       <assemblyIdentity name="NHSTestBot" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>nQ1cwkILfBQTDi0ssgFeQ7j53RU7La/zs2AKhLgGN74=</dsig:DigestValue>
+        <dsig:DigestValue>Fg1HCcxhsLni2XbS5Dr57AHSPkKupxWVXiaThW27E34=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,13 +86,13 @@
       <dsig:DigestValue>tLGrgcaeqY1YkqRcMa7EvgKOaX3kiKrZqczReG9Cavs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="NHSTestBot.exe.config" size="189">
+  <file name="NHSTestBot.exe.config" size="1027">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
+      <dsig:DigestValue>m5cq859AoRBWFG3S4TFCAR6ynJlRyJ4FULLOX/ZH5wo=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

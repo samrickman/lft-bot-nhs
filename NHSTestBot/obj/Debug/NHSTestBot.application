@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="NHSTestBot.exe.manifest" size="5175">
+    <dependentAssembly dependencyType="install" codebase="NHSTestBot.exe.manifest" size="5176">
       <assemblyIdentity name="NHSTestBot.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+q/b/LbKKFkw4iXHQ3omGPrDW57Hnkk2yP9aMLv2Pzs=</dsig:DigestValue>
+        <dsig:DigestValue>Q+eDGR06OmjWiWy7uzRUaIfMk504r7y4sbulXc0VaQ4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

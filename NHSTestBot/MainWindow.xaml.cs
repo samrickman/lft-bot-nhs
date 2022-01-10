@@ -22,6 +22,17 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 
+using System.Security;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+using System;
+using System.Text;
+using System.Security.Cryptography;
+using System.IO;
+using System.Linq;
+using System.Text.RegularExpressions;
+
 
 namespace NHSTestBot
 {
@@ -269,6 +280,8 @@ namespace NHSTestBot
         }
         private async void orderButton_Click(object sender, RoutedEventArgs e)
         {
+            savePassword();
+
             if (String.IsNullOrEmpty(passwordTextBox.Password))
             {
                 MessageBox.Show("Please enter your password", "Error");
@@ -284,5 +297,91 @@ namespace NHSTestBot
             }
             StatusText = StatusText + "\n" + DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss") + ":  Tests ordered successfully!";
         }
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            if (Properties.Settings.Default.username != string.Empty)
+            {
+                email.Text = Properties.Settings.Default.username;
+                string emailCipher; // use email as cipher 
+                Regex rgx = new Regex("[^a-zA-Z0-9]");
+                emailCipher = rgx.Replace(email.Text, ""); // remove non-alphanumeric
+                string encryptedPassword = Properties.Settings.Default.password;
+                string decryptedPassword = EncryptionHelper.Decrypt(encryptedPassword, emailCipher);
+
+                passwordTextBox.Password = decryptedPassword;
+
+
+
+            }
+        }
+        private void savePassword()
+        {
+            string emailCipher; // use email as cipher 
+            Regex rgx = new Regex("[^a-zA-Z0-9]");
+            emailCipher = rgx.Replace(email.Text, ""); // remove non-alphanumeric
+
+            Properties.Settings.Default.username = email.Text;
+            
+            string encryptedPassword = EncryptionHelper.Encrypt(passwordTextBox.Password, emailCipher);
+
+            Properties.Settings.Default.password = encryptedPassword;
+            
+            Properties.Settings.Default.Save();
+
+        }
+
+    }
+}
+
+/* I know nothing of encryption - this was brazenly
+ * borrowed from this StackOverflow response
+ * https://stackoverflow.com/a/27484425/12545041
+ * (and slightly edited)
+ */
+public static class EncryptionHelper
+{
+    public static string Encrypt(string clearText, string EncryptionKey)
+    {
+
+        byte[] clearBytes = Encoding.Unicode.GetBytes(clearText);
+        using (Aes encryptor = Aes.Create())
+        {
+            Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
+            encryptor.Key = pdb.GetBytes(32);
+            encryptor.IV = pdb.GetBytes(16);
+            using (MemoryStream ms = new MemoryStream())
+            {
+                using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateEncryptor(), CryptoStreamMode.Write))
+                {
+                    cs.Write(clearBytes, 0, clearBytes.Length);
+                    cs.Close();
+                }
+                clearText = Convert.ToBase64String(ms.ToArray());
+            }
+        }
+        return clearText;
+    }
+    public static string Decrypt(string cipherText, string EncryptionKey)
+    {
+
+        cipherText = cipherText.Replace(" ", "+");
+        byte[] cipherBytes = Convert.FromBase64String(cipherText);
+        using (Aes encryptor = Aes.Create())
+        {
+            Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
+            encryptor.Key = pdb.GetBytes(32);
+            encryptor.IV = pdb.GetBytes(16);
+            using (MemoryStream ms = new MemoryStream())
+            {
+                using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateDecryptor(), CryptoStreamMode.Write))
+                {
+                    cs.Write(cipherBytes, 0, cipherBytes.Length);
+                    cs.Close();
+                }
+                cipherText = Encoding.Unicode.GetString(ms.ToArray());
+            }
+        }
+        return cipherText;
     }
 }
