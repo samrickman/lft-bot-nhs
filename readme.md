@@ -1,18 +1,19 @@
 # NHS Lateral Flow Checker Jan 2022
 
-This is a bot which orders Lateral Flow Tests from the NHS Website.
+This is a simple piece of software which orders Lateral Flow Tests from the NHS Website.
 
-It requires you to enter your NHS-registered username and password, and it does the rest for you.
+It requires you to enter your NHS-registered username and password. It then opens a browser and completes the web form for you. If tests are unavailable, it waits five minutes and retries.
 
-It runs on your local machine and does not send your email address or password anywhere except to the NHS website. Check the source if you are so inclined.
+It runs on your local machine and does not send your email address or password anywhere, other than entering it into the NHS website. You can confirm this by checking the source (`MainWindow.cs`).
 
 ### Requirements
 
-You must:
+You must have:
 
-- Have an NHS-registered account.
-- The account must have an address registered to it (this will automatically be the case if you have ordered tests online before).
-- Currently only available for Windows.
+1. An NHS account login. If you are not sure whether you have one, or what email address/password you used, you can check [here](https://www.nhsapp.service.nhs.uk/login).
+2. An address registered to this account. This will automatically be the case if you have ordered tests online before.
+
+The software is currently only available for Windows.
 
 ### Installation 
 
@@ -22,10 +23,10 @@ TODO: upload release and make release into a link.
 2. Run `setup.exe`.
 3. Click `Install`.
 
-![Run setup](img/install-folder.png)
+![Run setup](img/install-folder.png | width=50)
 
 
-![Click Install](img/install.png)
+![Click Install](img/install.png | width=50)
 
 The program will open automatically after being installed.
 
@@ -34,10 +35,10 @@ The program will open automatically after being installed.
 1. The program will be added to the Start Menu automatically be the installation.
 2. Enter username and password and run the program.
 
-![](img/start-menu.png)
+![](img/start-menu.png | width=50)
 
 
-![](img/main-window.png)
+![](img/main-window.png | width=50)
 
 ### Legal disclaimer
 
