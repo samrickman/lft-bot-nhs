@@ -26,7 +26,7 @@ TODO: upload release and make release into a link.
 ![Run setup](img/install-folder.png){:height="50%" width="50%"}
 
 
-![Click Install](img/install.png | width=50)
+![Click Install](img/install.png){:height="50%" width="50%"}
 
 The program will open automatically after being installed.
 
@@ -35,10 +35,10 @@ The program will open automatically after being installed.
 1. The program will be added to the Start Menu automatically be the installation.
 2. Enter username and password and run the program.
 
-![](img/start-menu.png | width=50)
+![](img/start-menu.png){:height="50%" width="50%"}
 
 
-![](img/main-window.png | width=50)
+![](img/main-window.png){:height="50%" width="50%"}
 
 ### Legal disclaimer
 
