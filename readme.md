@@ -25,7 +25,7 @@ TODO: upload release and make release into a link.
 ![Run setup](img/install-folder.png)
 
 
-![Click Install](img/install-folder.png)
+![Click Install](img/install.png)
 
 The program will open automatically after being installed.
 
