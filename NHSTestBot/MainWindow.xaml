@@ -14,7 +14,7 @@
         </Grid.ColumnDefinitions>
         <Label Content="NHS-registered email address:" HorizontalAlignment="Left" Margin="8,9,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
         <Label Content="NHS-registered password:" HorizontalAlignment="Left" Margin="8,29,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
-        <TextBox x:Name="email" HorizontalAlignment="Left" Height="23" Margin="128.6,13,0,0" TextWrapping="Wrap" Text="samrickman@gmail.com" VerticalAlignment="Top" Width="197" Grid.Column="2"/>
+        <TextBox x:Name="email" HorizontalAlignment="Left" Height="23" Margin="128.6,13,0,0" TextWrapping="Wrap" Text="name@domain.com" VerticalAlignment="Top" Width="197" Grid.Column="2"/>
         <PasswordBox x:Name ="passwordTextBox" HorizontalAlignment="Left" Margin="128.6,37,0,0" VerticalAlignment="Top" Width="197" Grid.Column="2"/>
         <Button x:Name="orderButton" Content="Order tests!" HorizontalAlignment="Left" Height="44" Margin="343.6,11,0,0" VerticalAlignment="Top" Width="106" Click="orderButton_Click" Grid.Column="2"/>
         <TextBlock x:Name="statusText" HorizontalAlignment="Left" Height="259" Margin="15,70,0,0" TextWrapping="Wrap" Text="{Binding Path=StatusText}" VerticalAlignment="Top" Width="608" Grid.ColumnSpan="3"/>
