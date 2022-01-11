@@ -17,7 +17,7 @@ The software is currently only available for Windows.
 
 ### Installation 
 
-1. Download and unzip the [release](https://github.com/samrickman/lft-bot-nhs/releases/download/v001/release.zip).
+1. Download and unzip the [release](https://github.com/samrickman/lft-bot-nhs/releases/download/v002/v0_0_2.zip).
 2. Run `setup.exe`.
 3. Click `Install`.
 
@@ -53,6 +53,6 @@ The app uses .NET Framework so cannot be built from source on Mac/Linux.
 
 There is nothing in this code which infringes the GOV.UK [terms and conditions](https://www.gov.uk/help/terms-conditions). This is not a denial-of-service attack: it makes, at most, one request every five minutes. 
 
-This code does not introduce, or attempt to introduce, viruses, trojans, worms, logic bombs or any other material that’s malicious or technologically harmful. It does not attempt gain unauthorised access to GOV.UK, the server on which it’s stored or any server, computer or database connected to it.
+This code does not introduce, or attempt to introduce, viruses, trojans, worms, logic bombs or any other material that’s malicious or technologically harmful. It does not attempt to gain unauthorised access to GOV.UK, the server on which it’s stored or any server, computer or database connected to it.
 
 The NHS prevents Covid-19 tests being ordered more than once every 24 hours and this program does not circumvent, or attempt to circumvent, this limit.
