@@ -4,7 +4,7 @@ This is a simple piece of software which orders Lateral Flow Tests from the GOV.
 
 It requires you to enter your NHS-registered username and password. It then opens a browser and completes the web form for you. If tests are unavailable, it waits five minutes and retries, until tests are available.
 
-It runs on your local machine and does not send your email address or password anywhere, other than into the NHS website. You can confirm this by checking the source (`MainWindow.cs`).
+It runs on your local machine and does not send your email address or password anywhere, other than into the NHS website. Your AES-encrypted password [RFC2898](https://datatracker.ietf.org/doc/html/rfc2898) is also stored locally on your file system so you do not have to enter it each time you run the program. You can confirm this by checking the [source](.NHSTestBot\MainWindow.cs).
 
 ### Requirements
 
@@ -35,6 +35,19 @@ The program will open automatically after being installed.
 <img src="img/start-menu.png" style="width: 50%; height: 50%"/>
 
 <img src="img/main-window.png" style="width: 75%; height: 75%"/>
+
+# Installing from source (Windows only)
+
+If you wish to build from source, you will need Microsoft Visual Studio 2019 or later (not just VS code). The easiest way is to open the project in Visual Studio and click `Build` -> `Publish NHSTestBot`. However, you can also do it from the command line:  
+
+```
+git clone https://github.com/samrickman/lft-bot-nhs
+path\to\msbuild.exe .\NHSTestBot\NHSTestBot.csproj /p:Configuration=Release
+```
+
+If you are unsure of your path to msbuild, follow the instructions [here](https://stackoverflow.com/a/328133/12545041).
+
+The app uses .NET Framework so cannot be built from source on Mac/Linux.
 
 ### Legal information
 
