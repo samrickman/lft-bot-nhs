@@ -4,7 +4,7 @@ This is a simple piece of software which orders Lateral Flow Tests from the GOV.
 
 It requires you to enter your NHS-registered username and password. It then opens a browser and completes the web form for you. If tests are unavailable, it waits five minutes and retries, until tests are available.
 
-It runs on your local machine and does not send your email address or password anywhere, other than into the NHS website. Your AES-encrypted password [RFC2898](https://datatracker.ietf.org/doc/html/rfc2898) is also stored locally on your file system so you do not have to enter it each time you run the program. You can confirm this by checking the [source](.NHSTestBot\MainWindow.cs).
+It runs on your local machine and does not send your email address or password anywhere, other than into the NHS website. Your AES-encrypted password ([RFC2898])(https://datatracker.ietf.org/doc/html/rfc2898) is also stored locally on your file system so you do not have to enter it each time you run the program. You can confirm this by checking the [source](.NHSTestBot\MainWindow.cs).
 
 ### Requirements
 
