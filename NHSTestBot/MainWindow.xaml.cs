@@ -69,8 +69,6 @@ namespace NHSTestBot
                 // Set wait time
                 var wait = new WebDriverWait(driver, new TimeSpan(0, 0, elementLoadTime));
 
-                // Accept cookies
-                wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("/html/body/div[1]/div[1]/div[1]/div/div/div[2]/button"))).Click();
 
                 // Check we are not redirected quickly
                 System.Threading.Thread.Sleep(sleepTime);
@@ -95,7 +93,7 @@ namespace NHSTestBot
                 // Continue
                 foreach(var button in buttons)
                 {
-                    if (button.Text.Contains("Continue")){ 
+                    if (button.Text.Contains("Continue") || button.Text.Contains("Accept all cookies")){ 
                         button.Click(); 
                     }
                 }
