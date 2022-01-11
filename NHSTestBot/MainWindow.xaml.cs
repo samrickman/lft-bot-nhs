@@ -24,13 +24,7 @@ using OpenQA.Selenium.Support.UI;
 
 using System.Security;
 using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using System;
-using System.Text;
-using System.Security.Cryptography;
 using System.IO;
-using System.Linq;
 using System.Text.RegularExpressions;
 
 
