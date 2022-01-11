@@ -198,7 +198,7 @@ namespace NHSTestBot
                         button.Click();
                     }
                 }
-
+                MessageBox.Show("a");
                 driver.Quit();
                 return true;
 
@@ -267,7 +267,7 @@ namespace NHSTestBot
 
 
             }
-            Console.WriteLine("getTests:" + getTests);
+            
             return getTests;
         }
         private async void orderButton_Click(object sender, RoutedEventArgs e)
@@ -285,7 +285,11 @@ namespace NHSTestBot
             while(!testsOrdered)
             {
                 testsOrdered = orderTests();
-                await Task.Delay(TimeSpan.FromSeconds(sleepTime));
+                if (!testsOrdered) // can change if first iteration is successful
+                {
+                    await Task.Delay(TimeSpan.FromSeconds(sleepTime));
+                }
+                
             }
             StatusText = StatusText + "\n" + DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss") + ":  Tests ordered successfully!";
         }
