@@ -1,6 +1,6 @@
 # Automated NHS Lateral Flow Test Ordering
 
-This is a simple piece of software which orders Lateral Flow Tests from the GOV.UK Website.
+This is a simple piece of software which orders Lateral Flow Tests from the GOV.UK Website. Inspired by a similar project in Python by [Laurence](https://github.com/ledurnan).
 
 It requires you to enter your NHS-registered username and password. It then opens a browser and completes the web form for you. If tests are unavailable, it waits five minutes and retries, until tests are available.
 
