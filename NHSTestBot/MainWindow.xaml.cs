@@ -43,11 +43,7 @@ namespace NHSTestBot
 
 
            
-        private bool fakeOpenBrowser()
-        {
-            System.Threading.Thread.Sleep(500);
-            return true;
-        }
+
         private bool OpenBrowser()
         {
             IWebDriver driver = new ChromeDriver(Environment.CurrentDirectory);
@@ -198,7 +194,7 @@ namespace NHSTestBot
                         button.Click();
                     }
                 }
-                MessageBox.Show("a");
+
                 driver.Quit();
                 return true;
 

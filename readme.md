@@ -17,7 +17,7 @@ The software is currently only available for Windows.
 
 ### Installation 
 
-1. Download and unzip the [release](https://github.com/samrickman/lft-bot-nhs/releases/download/v002/v0_0_2.zip).
+1. Download and unzip the [release](https://github.com/samrickman/lft-bot-nhs/releases/download/v003/v_0_0_3.zip).
 2. Run `setup.exe`.
 3. Click `Install`.
 
@@ -49,7 +49,7 @@ If you are unsure of your path to msbuild, follow the instructions [here](https:
 
 The app uses .NET Framework so cannot be built from source on Mac/Linux.
 
-### Legal information
+# Legal information
 
 There is nothing in this code which infringes the GOV.UK [terms and conditions](https://www.gov.uk/help/terms-conditions). This is not a denial-of-service attack: it makes, at most, one request every five minutes. 
 
