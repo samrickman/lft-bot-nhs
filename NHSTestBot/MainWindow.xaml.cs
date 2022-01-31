@@ -192,11 +192,13 @@ namespace NHSTestBot
                     if (button.Text.Contains("Place order"))
                     {
                         button.Click();
+                        driver.Quit();
+                        return true;
                     }
                 }
 
                 driver.Quit();
-                return true;
+                return false;
 
             }
             catch (Exception)
