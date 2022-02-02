@@ -27,6 +27,7 @@ using System.Security.Cryptography;
 using System.IO;
 using System.Text.RegularExpressions;
 
+using System.Drawing;
 
 namespace NHSTestBot
 {
@@ -42,7 +43,47 @@ namespace NHSTestBot
         }
 
 
-           
+        private bool TakeScreenshot()
+        {
+
+            System.Drawing.Rectangle bounds = System.Windows.Forms.Screen.GetBounds(System.Drawing.Point.Empty);
+            using (Bitmap bitmap = new Bitmap(bounds.Width, bounds.Height))
+            {
+                using (Graphics g = Graphics.FromImage(bitmap))
+                {
+                    g.CopyFromScreen(System.Drawing.Point.Empty, System.Drawing.Point.Empty, bounds.Size);
+                }
+                try
+                {
+
+                    string root = System.IO.Path.GetPathRoot(System.Reflection.Assembly.GetEntryAssembly().Location);
+                    Regex rgx = new Regex("\\\\"); // one literal backslash
+                    string rootForwardSlash = rgx.Replace(root, "/"); // replace backslash with forward slash
+                    string directory = $"{rootForwardSlash}NHS-LFT-Screenshots/";
+                    
+                    if(!Directory.Exists(directory))
+                    {
+                        Directory.CreateDirectory(directory);
+                    }
+                    
+                    // Change tmp to datetime
+                    // Then just update the success message with file saved with path.
+                    string filepath = $"{directory}{DateTime.Now:yyyy-dd-mm-HH-mm-ss}.png";
+                    Console.WriteLine(filepath);
+                    bitmap.Save(filepath, System.Drawing.Imaging.ImageFormat.Png);
+                    string newLine = $"Screenshot saved: {filepath}";
+                    StatusText = StatusText + "\n" + newLine;
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Cannot save screenshot");
+                    return false;
+
+                }
+                return false;
+            }
+        }
 
         private bool OpenBrowser()
         {
@@ -192,6 +233,11 @@ namespace NHSTestBot
                     if (button.Text.Contains("Place order"))
                     {
                         button.Click();
+
+                        // Wait for next page to load
+                        System.Threading.Thread.Sleep(sleepTime);
+                        TakeScreenshot();
+
                         driver.Quit();
                         return true;
                     }
@@ -241,12 +287,16 @@ namespace NHSTestBot
             int numLines;
             if (String.IsNullOrEmpty(StatusText))
             {
-                StatusText = "Starting attempts to order at: " + DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
+                StatusText = $"Starting attempts to order at: {DateTime.Now:MM/dd/yyyy HH:mm:ss}";
             }
+
+
             var getTests = OpenBrowser();
             if (!getTests)
             {
-                string newLine = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss") + ": Site unavailable. Retrying in 60 seconds...";
+                DateTime UnavailableTime = DateTime.Now;
+                DateTime RetryTime = UnavailableTime.AddMinutes(5);
+                string newLine = $"{UnavailableTime:MM/dd/yyyy HH:mm:ss}: Site unavailable. Retrying at {RetryTime:HH: mm:ss}";
                 StatusText = StatusText + "\n" + newLine;
 
                 
@@ -270,6 +320,10 @@ namespace NHSTestBot
         }
         private async void orderButton_Click(object sender, RoutedEventArgs e)
         {
+            
+
+            // Also update it so it says when next retry is...
+
             savePassword();
 
             if (String.IsNullOrEmpty(passwordTextBox.Password))
@@ -289,7 +343,7 @@ namespace NHSTestBot
                 }
                 
             }
-            StatusText = StatusText + "\n" + DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss") + ":  Tests ordered successfully!";
+            StatusText = $"{StatusText} \n{DateTime.Now:MM/dd/yyyy HH:mm:ss}: Tests ordered successfully!";
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
