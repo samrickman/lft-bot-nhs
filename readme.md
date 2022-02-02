@@ -17,7 +17,7 @@ The software is currently only available for Windows.
 
 ### Installation 
 
-1. Download and unzip the [release](https://github.com/samrickman/lft-bot-nhs/releases/download/v003/v_0_0_3.zip).
+1. Download and unzip the latest [release](https://github.com/samrickman/lft-bot-nhs/releases/), which will be named something like *v_0_0_6.zip*.
 2. Run `setup.exe`.
 3. Click `Install`.
 
