@@ -1,4 +1,8 @@
-# Automated NHS Lateral Flow Test Ordering
+# ** DEPRECATED 1st April 2022 **
+
+This software no longer runs as the UK Government is ending the routine provision of free Lateral Flow Tests. I will leave it here to remind myself how to use Selenium in C#, but do not download or clone it, as it will not work.
+
+## Automated NHS Lateral Flow Test Ordering
 
 This is a simple piece of software which orders Lateral Flow Tests from the GOV.UK Website. Inspired by a similar project in Python by [Laurence](https://github.com/ledurnan).
 
